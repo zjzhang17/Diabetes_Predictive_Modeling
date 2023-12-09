@@ -95,10 +95,43 @@ The above models were evaluated using the metrics listed in the subsequent table
 
 ## Table 1: Model Performance on Test Data
 <img width="629" alt="Screenshot 2023-12-09 at 2 35 37 PM" src="https://github.com/zjzhang17/Diabetes_Predictive_Modeling/assets/116914452/de018fe5-5ca9-4022-8034-35eae4d53ed4">
+*F1 Score, Recall, Precision, and Accuracy were reported using a 0.2 optimized threshold except for
+**SVC which used -0.5 for decision function and neural network which used default 0.5
 
+As the harmonic mean between recall and precision, the F1 score was used as our secondary metric for optimization. All of the models achieved suboptimal F1, Recall, Precision, and Accuracy at the default threshold setting of 0.5. Upon finding our optimal hyperparameter setting per ROC-AUC, these additional metrics were calculated using the 0.2 thresholds, which can be taken as the approximate optimal threshold values for the Voter Classifier and several tree models.
 
+Overall, the F1 scores of all models are very closely clustered with Voter Classifier taking a small lead. Note that the neural network was unable to be properly modeled with an altered threshold and used the default threshold instead. This could be due to general hardware and memory usage issues with a resource-intensive model like a deep learning neural network. Its results were in line with the results of other models using the default setting.
 
+# Discussion and Future Work
+Collectively, our models produced similar favorable results with ROC-AUC above 0.8 for each model. F1 Score, the harmonic mean between recall and precision, was less impressive as no model was able to break 0.5. This result is unsurprising as diabetes is a highly complex condition with myriads of clinical interactions and nuances. Considering we only used 21 self-reported variable features to try to predict the individual’s disease status, being able to score above 50% in one of the metrics of recall and precision is already good. In a similar case using BRFSS data from 2014, Zidian Xie et al. (Xie, 2019) built models that had sensitivities of around 50%-51% so our models performed very favorably.
 
+In addition, our results highlight the basic tradeoff between recall and precision, between valuing the cost of false negatives versus the cost of false positives, in trying to accurately classify our group of individuals. In the literature for similar clinical scenarios, the focus is often on recall as there is greater clinical value in correctly identifying potential individuals with the disease and minimizing false negatives versus correctly identifying the larger population of healthy individuals.
+
+To further develop and improve on our models, it may be important to find additional high-quality data and even more importantly, properly recorded time series panel data on individuals who progressed from healthy status to diabetic positive status later on. Diabetes is a progressive chronic condition so taking only snapshots of individuals will inevitably miss out on crucial pieces of information. Additionally, building models from time series data will allow us to evaluate model performance by backtesting for forecast errors, which can be more interpretable and be  effectively communicated to clinicians and health policy stakeholders. Unfortunately due to HIPAA and privacy rules, such detailed data would be difficult to acquire in the public domain.
+
+# Conclusion
+Using a total of eight machine learning models, Decision Tree, Logistic Regression, Random Forest, XGBoost, GBM, Linear Support Vector Machine, Neural Network, and Voter Classifier, we predicted at a high level the diabetes status of individuals using a dataset with 250,000 subjects and only 21 features. We obtained ROC-AUC scores of above 0.8 for all of our models with the neural network being the best model by a small margin. We also reported secondary metrics using threshold shifting to obtain optimal scores for F1 Score, Recall, and Precision that compared favorably with literature results.
+
+# References
+Data Source
+https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset?resource=download 
+
+Data Model Codes on Google Collab
+https://drive.google.com/drive/folders/1wpzaHK-72NQfatfZKzKYNn2FsmBS_V-l?usp=drive_link
+
+Xie, Z., Nikolayeva, O., Luo, J., Li, D. (2019, September 19) Building Risk Prediction Models for Type 2 Diabetes Using Machine Learning Techniques. Preventing Chronic Disease. https://www.cdc.gov/pcd/issues/2019/19_0109.htm#References 
+
+# Appendix
+
+Team members built the following models and made significant contributions to the presentation and the report
+
+Bedilu - Logistic Regression
+Jason - Random Forest
+Kajari - Baseline Models, RFE, XGBoost, GBM
+Rishipal - SVC, Neural Network
+Xavier - Decision Tree, Voter Classifier
+
+## Figure 1 - Distribution of Binary Target
 
 
 
