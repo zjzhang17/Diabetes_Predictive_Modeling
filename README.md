@@ -137,6 +137,8 @@ Xavier - Decision Tree, Voter Classifier
 ## Figure 2
 <img width="644" alt="Screenshot 2023-12-09 at 2 41 36 PM" src="https://github.com/zjzhang17/Diabetes_Predictive_Modeling/assets/116914452/dd120f12-5d53-4ea9-bb9a-a0a59e787a11">
 
+## Figure 3
+<img width="650" alt="Screenshot 2023-12-09 at 2 45 46 PM" src="https://github.com/zjzhang17/Diabetes_Predictive_Modeling/assets/116914452/f362b359-2c8f-4d01-ba7d-a483fd52140a">
 
 
 
