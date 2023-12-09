@@ -126,9 +126,13 @@ Xie, Z., Nikolayeva, O., Luo, J., Li, D. (2019, September 19) Building Risk Pred
 ## Team members built the following models and made significant contributions to the presentation and the report:
 
 Bedilu - Logistic Regression
+
 Jason - Random Forest
+
 Kajari - Baseline Models, RFE, XGBoost, GBM
+
 Rishipal - SVC, Neural Network
+
 Xavier - Decision Tree, Voter Classifier
 
 ## Figure 1 - Distribution of Binary Target
