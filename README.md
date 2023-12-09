@@ -132,6 +132,11 @@ Rishipal - SVC, Neural Network
 Xavier - Decision Tree, Voter Classifier
 
 ## Figure 1 - Distribution of Binary Target
+<img width="694" alt="Screenshot 2023-12-09 at 2 40 44 PM" src="https://github.com/zjzhang17/Diabetes_Predictive_Modeling/assets/116914452/0d6d70c8-043a-4d39-a3af-3273956bd5e8">
+
+## Figure 2
+<img width="644" alt="Screenshot 2023-12-09 at 2 41 36 PM" src="https://github.com/zjzhang17/Diabetes_Predictive_Modeling/assets/116914452/dd120f12-5d53-4ea9-bb9a-a0a59e787a11">
+
 
 
 
