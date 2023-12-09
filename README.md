@@ -85,3 +85,22 @@ The LinearSVC model was initiated by loading a diabetes dataset and preparing it
 
 Results: The SVC model, as implemented in the provided code, demonstrated a reasonably high level of accuracy, achieving approximately 82.1% ROC AUC on the test set. The grid search for hyperparameter tuning identified the best regularization parameter 'C' as 1668.1, contributing to the model's optimal performance. However, a closer examination of the confusion matrix and evaluation metrics revealed certain challenges. The model exhibited a relatively low recall of 60.4%, indicating its difficulty in correctly identifying positive instances. On the positive side, precision was comparatively higher at 37.1%, suggesting that when the model predicted positive instances, it was correct around 57% of the time. The trade-off between precision and recall was reflected in the F1 score of 45.9%, emphasizing the need for a balanced approach. The ROC curve and Precision-Recall curve further illustrated the model's discriminative ability and precision-recall trade-off. In summary, while the SVC model demonstrated robust overall accuracy, addressing the challenges in correctly identifying positive instances could enhance its performance in specific areas.
 
+# Neural Network
+Scikit learn multilayer preceptor (MLP) was used for neural networks on the diabetes dataset. Since this was a classification problem, an MPLClassifier was used. Imported libraries included Matplotlib, Pandas, Numpy, Scikit-learn, and Seaborn. A function called evaluateBinaryClassification was created to calculate metrics like F-score, accuracy, recall, and precision by comparing the actual and projected values. After that, a dataset was loaded and divided into testing and training sets. The training set was used to train a Multilayer Perceptron (MLP) model, while the test set was used to assess the model's performance. The algorithm also performed a grid search using cross-validation to adjust the hyperparameters of the MLP model. The top hyperparameters were printed together with the scores they earned. The test set was used to assess the final trained MLP model using the chosen hyperparameters. The code continued with further assessments, which included a confusion matrix, ROC curve, and precision-recall curve display, as well as the computation of the ROC AUC score and the number of affirmative predictions. All things considered, the code demonstrated a thorough method for creating, fine-tuning, and evaluating an MLP model for binary classification using diabetes data.
+ 
+Results: The output from the aforementioned code revealed the performance metrics of the Multilayer Perceptron (MLP) model on the test set. The model achieved an accuracy of 0.865382, indicating that approximately 87% of the predictions were correct. However, the recall, or the ability to identify actual positive instances, was low at 0.140985, indicating that only 14% of positive instances were correctly identified. On the other hand, the precision was relatively higher at 0.568225, implying that around 57% of instances predicted as positive were indeed positive. The F-score, representing the harmonic mean of precision and recall, was 0.225916, indicating a trade-off between precision and recall. The precision-recall curve's average precision (AP) was 0.42, suggesting a moderate ability to discriminate positive instances while maintaining precision. In summary, the model demonstrated high overall accuracy but faced challenges in correctly identifying positive instances, and further exploration or fine-tuning may be considered to enhance specific aspects of its performance.
+
+# Results and Performance Metric
+The above models were evaluated using the metrics listed in the subsequent table. The primary metric was the Area Under the Curve of the Receiver Operator Curve. This metric has the advantage of being threshold-independent and allows for easy comparison across different models including those that do not utilize a standard threshold range like SVC. Overall, all the models perform approximately similar to each other with the neural network slightly edging out gradient-boosted tree classification models in terms of ROC-AUC with a score of 0.830.
+
+Table 1: Model Performance on Test Data
+<img width="629" alt="Screenshot 2023-12-09 at 2 35 37 PM" src="https://github.com/zjzhang17/Diabetes_Predictive_Modeling/assets/116914452/de018fe5-5ca9-4022-8034-35eae4d53ed4">
+
+
+
+
+
+
+
+
+
