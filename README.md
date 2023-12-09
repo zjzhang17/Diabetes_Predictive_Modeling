@@ -123,8 +123,7 @@ https://drive.google.com/drive/folders/1wpzaHK-72NQfatfZKzKYNn2FsmBS_V-l?usp=dri
 Xie, Z., Nikolayeva, O., Luo, J., Li, D. (2019, September 19) Building Risk Prediction Models for Type 2 Diabetes Using Machine Learning Techniques. Preventing Chronic Disease. https://www.cdc.gov/pcd/issues/2019/19_0109.htm#References 
 
 # Appendix
-Team members built the following models and made significant contributions to the presentation and the report
-
+## Team members built the following models and made significant contributions to the presentation and the report
 Bedilu - Logistic Regression
 Jason - Random Forest
 Kajari - Baseline Models, RFE, XGBoost, GBM
