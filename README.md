@@ -93,7 +93,7 @@ Results: The output from the aforementioned code revealed the performance metric
 # Results and Performance Metric
 The above models were evaluated using the metrics listed in the subsequent table. The primary metric was the Area Under the Curve of the Receiver Operator Curve. This metric has the advantage of being threshold-independent and allows for easy comparison across different models including those that do not utilize a standard threshold range like SVC. Overall, all the models perform approximately similar to each other with the neural network slightly edging out gradient-boosted tree classification models in terms of ROC-AUC with a score of 0.830.
 
-Table 1: Model Performance on Test Data
+## Table 1: Model Performance on Test Data
 <img width="629" alt="Screenshot 2023-12-09 at 2 35 37 PM" src="https://github.com/zjzhang17/Diabetes_Predictive_Modeling/assets/116914452/de018fe5-5ca9-4022-8034-35eae4d53ed4">
 
 
