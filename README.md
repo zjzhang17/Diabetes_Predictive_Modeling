@@ -39,5 +39,49 @@ Further analysis revealed an Average Precision of 0.414, providing clear insight
 
 In conclusion, our Logistic Regression model shows promising results, particularly in predicting class 0. However, challenges related to class 1 prediction warrant further investigation and potential model refinement.
 
+# Decision Tree
+The decision tree model was one of the first predictive models employed on this dataset. A proper pipeline with a standard scaler was applied. GridSearchCV was applied to find optimal max features and max depth which were found to be 8 and 16 respectively. 
 
+During development, feature engineering was performed to convert several continuous variables, such as Physical Health and Mental Health to dummy variables. BMI was log transformed and SMOTE oversampling technique was applied. The use of these techniques either individually or in combination with each other did not increase model test performance in the primary metric of ROC-AUC. 
+
+In the case of using SMOTE, it resulted in a significant decrease in several secondary metrics such as F1 Score. We speculate that oversampling caused overfitting resulting in increased cross-validated training scores but decreased test scores. The results from this model allowed us to adopt the general methodology outlined above for the rest of our models.
+
+# Random Forest
+Following the observation of decision tree model outcomes, the Random Forest classifier was applied in this machine learning pipeline. The code systematically addresses pivotal stages, encompassing data preparation, hyperparameter tuning via grid search cross-validation, model assessment on a test set, and the visualization of key performance metrics like precision, recall, and the ROC curve.
+
+Upon the requisite importation of libraries and the definition of features along with the target variable, the code proceeds to instantiate a Random Forest classifier. Hyperparameter tuning is systematically conducted through grid search cross-validation, utilizing a 3-fold validation strategy to pinpoint optimal values for relevant parameters.
+
+The top-performing model, determined through the grid search process, is subsequently scrutinized on the test set. The code then calculates and presents an array of metrics, including precision, recall, and the area under the ROC curve, offering a comprehensive evaluation of the classifier's performance.
+
+# GBM, Random Forest, and XGBoost Recursive Feature Elimination:
+Recursive Feature Elimination, or RFE for short, is a feature selection algorithm. It works by recursively removing attributes and building a model on those attributes that remain. It uses the model accuracy to identify which attributes (and combination of attributes) contribute the most to predicting the target attribute. We performed Recursive Feature Elimination using XGBoost, Random Forest, and GBM. 
+
+XGBoost: The top features identified by RFE include 'HighBP' (High Blood Pressure), 'GenHlth' (General Health), and 'HighChol' (High Cholesterol), suggesting that these are significant predictors for the model.
+
+Random Forest: This model identifies 'BMI', 'Age', and 'PhysHlth' (Physical Health) as the top features.
+
+GBM: The top features for the GBM model are 'GenHlth', 'HighBP', and 'BMI', which are also important features in XGBoost and Random Forest.
+
+The top features identified by RFE include 'HighBP' (High Blood Pressure), 'GenHlth' (General Health), and 'HighChol' (High Cholesterol), suggesting that these are significant predictors for the model and we are going to use these features to build our models (XGBoost and GBM).
+
+# XGBoost
+XGBoost has proven to be essential for our classification tasks, optimized via GridSearchCV to find the optimal set of hyper-parameters such as n_estimators, learning_rate, and max_depth. Regularization parameters alpha and lambda were also fine-tuned to lower overfitting.
+
+The model was evaluated using precision, recall, and F1-score at various thresholds, with the confusion matrices offering a clear view of its binary classification efficacy. At a 0.5 threshold, we got a high recall for the negative class but a very low recall for class 1. Adjusting the threshold to 0.25 significantly improved recall for class 1 and since we are trying to predict who will truly have Diabetes, the 0.25 threshold proves to me the more important metric. 
+
+
+# Gradient Boosting Classifier
+The GBM model served as a key predictive tool for our dataset. We initiated the process with a well-structured pipeline. We applied GridSearchCV, determining the best set of hyper-parameters as 'max_depth= 3', ‘learning_rate= 0.1’, etc.
+
+The model was evaluated using precision, recall, and F1-score at various thresholds like XGBoost and we got the same results for recall, AP, etc that we got in XGBoost. 
+
+We tried SMOTE to handle the imbalance data but the results were not that great, so we focused on the traditional machine learning strategies.
+
+# Voter Classifier
+Stacking voter classifier from Sklearn was performed using four of the preceding models, logistic regression, decision tree, random forest, and XGBoost with the previously determined hyperparameters. SVC could not be utilized as the decision function code, which was needed to evaluate the ROC-AUC score for SVM models, was not supported by the voter classifier model from Sklearn. The neural network was also not incorporated due to hardware and out-of-memory technical difficulties with using our preferred Python environment.
+
+# SVC Linear
+The LinearSVC model was initiated by loading a diabetes dataset and preparing it for classification tasks, splitting it into training and testing sets, and standardizing the features. We then implemented a Support Vector Classifier (SVC) using scikit-learn's LinearSVC. A pipeline was constructed for the classifier, and a grid search was conducted to optimize hyperparameters, specifically focusing on the regularization parameter 'C.' The best-performing SVC model was selected based on the mean cross-validation score. The model's performance was assessed on the test set using metrics such as ROC AUC. The threshold was set to -0.5. Subsequently, the code computed and visualized evaluation metrics, including a confusion matrix, ROC curve, and Precision-Recall curve. These metrics provided insights into the model's ability to classify instances, highlighting areas of strength, such as high accuracy, and areas for improvement, such as the need for better recall in identifying positive instances.
+
+Results: The SVC model, as implemented in the provided code, demonstrated a reasonably high level of accuracy, achieving approximately 82.1% ROC AUC on the test set. The grid search for hyperparameter tuning identified the best regularization parameter 'C' as 1668.1, contributing to the model's optimal performance. However, a closer examination of the confusion matrix and evaluation metrics revealed certain challenges. The model exhibited a relatively low recall of 60.4%, indicating its difficulty in correctly identifying positive instances. On the positive side, precision was comparatively higher at 37.1%, suggesting that when the model predicted positive instances, it was correct around 57% of the time. The trade-off between precision and recall was reflected in the F1 score of 45.9%, emphasizing the need for a balanced approach. The ROC curve and Precision-Recall curve further illustrated the model's discriminative ability and precision-recall trade-off. In summary, while the SVC model demonstrated robust overall accuracy, addressing the challenges in correctly identifying positive instances could enhance its performance in specific areas.
 
