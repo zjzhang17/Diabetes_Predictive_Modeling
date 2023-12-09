@@ -95,6 +95,7 @@ The above models were evaluated using the metrics listed in the subsequent table
 
 ## Table 1: Model Performance on Test Data
 <img width="629" alt="Screenshot 2023-12-09 at 2 35 37 PM" src="https://github.com/zjzhang17/Diabetes_Predictive_Modeling/assets/116914452/de018fe5-5ca9-4022-8034-35eae4d53ed4">
+
 *F1 Score, Recall, Precision, and Accuracy were reported using a 0.2 optimized threshold except for
 **SVC which used -0.5 for decision function and neural network which used default 0.5
 
@@ -122,7 +123,6 @@ https://drive.google.com/drive/folders/1wpzaHK-72NQfatfZKzKYNn2FsmBS_V-l?usp=dri
 Xie, Z., Nikolayeva, O., Luo, J., Li, D. (2019, September 19) Building Risk Prediction Models for Type 2 Diabetes Using Machine Learning Techniques. Preventing Chronic Disease. https://www.cdc.gov/pcd/issues/2019/19_0109.htm#References 
 
 # Appendix
-
 Team members built the following models and made significant contributions to the presentation and the report
 
 Bedilu - Logistic Regression
