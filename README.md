@@ -1,6 +1,6 @@
 # Diabetes_Predictive_Modeling
 
-Xavier Zuo, Bedilu Jebena, Rishipal R. Bansode, Jason Zhang, and Kajari Bhaumik
+By: Xavier Zuo, Bedilu Jebena, Rishipal R. Bansode, Jason Zhang, and Kajari Bhaumik
 
 # Introduction 
 Millions of people worldwide are affected by the global health issue of diabetes, emphasizing the critical need to manage diabetic health indicators effectively to prevent complications and enhance overall well-being. To contribute to the comprehension and forecasting of outcomes associated with diabetes, our team has decided to investigate the use of machine learning. This involves forecasting diabetic health indicators based on a dataset enriched with a variety of independent variables.
